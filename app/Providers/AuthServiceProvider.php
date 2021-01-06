@@ -4,6 +4,7 @@ namespace App\Providers;
 
 
 use App\Models\Admin;
+use App\Models\Booster;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -29,6 +30,9 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('admin',function ($user){
             return $user->userble instanceof Admin;
+        });
+        Gate::define('booster',function ($user){
+            return $user->userble instanceof Booster;
         });
     }
 }

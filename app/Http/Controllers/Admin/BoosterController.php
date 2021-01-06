@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Booster;
+use App\Models\User;
+use App\Models\UserLOL;
 use Illuminate\Http\Request;
 
 class BoosterController extends Controller
@@ -14,7 +17,8 @@ class BoosterController extends Controller
      */
     public function index()
     {
-        //
+        $users= User::where('userble_type','App\Models\UserLol')->get();
+        return view('admin.users.clients',compact('users'));
     }
 
     /**

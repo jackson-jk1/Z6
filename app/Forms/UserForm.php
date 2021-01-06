@@ -26,7 +26,7 @@ class UserForm extends Form
 
         ])->add('rank', 'select',[
             'label' => 'Seu ELO',
-             'choices' => Ranks::RANK_STATUS,
+             'choices' => $this->roles(),
              'rules' => 'required|in:'.implode(',',array_keys(Ranks::RANK_STATUS))
             ]);
 
@@ -34,5 +34,9 @@ class UserForm extends Form
 
     }
 
+ protected function roles(){
 
+        return Ranks::RANK_STATUS;
+
+ }
 }

@@ -17,14 +17,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
 Route::prefix('admin')->group(function(){
-    Auth::routes();
+
     Route::group([
         'name'=> 'Admin\\',
         'as' => 'admin.',
         'middleware' => ['auth','can:admin']
     ], function (){
         Route::resource('users','\App\Http\Controllers\Admin\UserController');
+
+    });
+    Route::group([
+        'name'=> 'Booster\\',
+        'as' => 'admin.',
+        'middleware' => ['auth','can:booster']
+    ], function (){
+        Route::resource('booster','\App\Http\Controllers\Admin\BoosterController');
 
     });
 });

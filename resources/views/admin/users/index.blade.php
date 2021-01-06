@@ -12,10 +12,10 @@
             <div class="col-md-4">
         <div class="card text-center mt-3">
             <div class="card-header">
-                <img src="cinqueterre.jpg" class="rounded-circle">
+                <h5 class="card-title">{{$user->name}}</h5>
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{$user->name}}</h5>
+
                 <h5 class="card-title">{{$user->rank}}</h5>
                 <p class="card-text">{{$user->email}}</p>
 

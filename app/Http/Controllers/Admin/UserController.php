@@ -112,6 +112,9 @@ class UserController extends Controller
                 ->withInput();
         }
         $data = $form->getFieldValues();
+        $value =  $data['rank'];
+        $value = Ranks::RANK_STATUS["$value"];
+        $data['rank'] = $value;
         $user->update($data);
 
         return redirect()->route('admin.users.index');

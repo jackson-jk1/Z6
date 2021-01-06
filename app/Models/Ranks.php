@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Notifications\UserCreate;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Password;
 
 class Ranks extends Model
 
@@ -19,6 +21,23 @@ class Ranks extends Model
         8 => 'Desafiante'
 
     ];
+
+    const RANK_DIVISION = [
+        1 => 'I',
+        2 => 'II',
+        3 => 'III',
+        4 => 'IV',
+        5 => 'V',
+    ];
+
+    public static function createFully($data){
+
+        $user = parent::create($data);
+
+        $user->save();
+        return $user;
+
+    }
 
 
 }
