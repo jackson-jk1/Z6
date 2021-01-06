@@ -16,6 +16,18 @@ class UserSeed extends Seeder
     {
         User::factory([
             'email'=> 'biladanoar@gmail.com'
-        ])->create();
+        ])->create()->each(function (User $user){
+            User::assingRole($user, User::ROLE_ADMIN);
+            $user->save();
+        });
+        User::factory(10)->create()->each(function (User $user){
+            User::assingRole($user, User::ROLE_BOOSTER);
+            $user->save();
+        });
+
+        User::factory(10)->create()->each(function (User $user){
+            User::assingRole($user, User::ROLE_USER);
+            $user->save();
+        });
     }
 }

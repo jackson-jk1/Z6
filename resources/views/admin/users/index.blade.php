@@ -9,26 +9,27 @@
 
         <div class="row">
             @foreach($users as $user)
-            <div class="col-4">
+            <div class="col-md-4">
         <div class="card text-center mt-3">
             <div class="card-header">
                 <img src="cinqueterre.jpg" class="rounded-circle">
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{$user->name}}</h5>
+                <h5 class="card-title">{{$user->rank}}</h5>
                 <p class="card-text">{{$user->email}}</p>
+
 
                 <form method="POST" action="{{route('admin.users.destroy',['user' => $user->id])}}">
                     @csrf
                     @method('DELETE')
-                    {!!Button::primary('editar')->asLinkTo(route('admin.users.edit',['user' => $user->id])) !!}
+                    {!!Button::primary('Editar')->asLinkTo(route('admin.users.edit',['user' => $user->id])) !!}
                     <button type="submit" class="btn btn-danger">Excluir</button>
                 </form>
             </div>
         </div>
 
         </div>
-                {!! $users->links() !!}
             @endforeach
         </div>
 

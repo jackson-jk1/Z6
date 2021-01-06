@@ -20,9 +20,9 @@ Route::get('/', function () {
 Route::prefix('admin')->group(function(){
     Auth::routes();
     Route::group([
-        'name'=> 'Adimin\\',
+        'name'=> 'Admin\\',
         'as' => 'admin.',
-        'middleware' => 'auth'
+        'middleware' => ['auth','can:admin']
     ], function (){
         Route::resource('users','\App\Http\Controllers\Admin\UserController');
 

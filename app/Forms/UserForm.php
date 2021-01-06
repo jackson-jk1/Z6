@@ -2,6 +2,8 @@
 
 namespace App\Forms;
 
+use App\Models\Ranks;
+use App\Models\User;
 use Kris\LaravelFormBuilder\Form;
 
 class UserForm extends Form
@@ -17,7 +19,20 @@ class UserForm extends Form
             ->add('email', 'email',[
                 'label' => 'Email',
                 'rules' => "required|max:255|unique:users,email,{$id}"
+            ])
+        ->add('type', 'hidden',[
+            'label' => 'Tipo de usuario',
+            'value' => User::ROLE_BOOSTER,
+
+        ])->add('rank', 'select',[
+            'label' => 'Seu ELO',
+             'choices' => Ranks::RANK_STATUS,
+             'rules' => 'required|in:'.implode(',',array_keys(Ranks::RANK_STATUS))
             ]);
 
+
+
     }
+
+
 }

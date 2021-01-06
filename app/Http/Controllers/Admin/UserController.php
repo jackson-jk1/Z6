@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Forms\UserForm;
 use App\Http\Controllers\Controller;
+use App\Models\Ranks;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users= User::paginate();
+        $users= User::where('userble_type','App\Models\Booster')->get();
+
         return view('admin.users.index',compact('users'));
     }
 
@@ -38,27 +40,27 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param  \App\Models\User  $user
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         /** @var Form $form */
-        $form = \FormBuilder::create(UserForm::class,[
+        $form = \FormBuilder::create(UserForm::class);
 
-        ]);
-
-       if(!$form->isValid()){
-           return redirect()
-               ->back()
-               ->withErrors($form->getErrors())
-               ->withInput();
-       };
+        if(!$form->isValid()){
+            return redirect()
+                ->back()
+                ->withErrors($form->getErrors())
+                ->withInput();
+        }
        $data = $form->getFieldValues();
-       $password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
-       $data['password'] = $password;
-       User::create($data);
-
+        $value =  $data['rank'];
+        $value = Ranks::RANK_STATUS["$value"];
+        $data['rank'] = $value;
+       User::createFully($data);
+       $request->session()->flash('message','Booster cadastrado');
        return redirect()->route('admin.users.index');
     }
 
@@ -108,7 +110,7 @@ class UserController extends Controller
                 ->back()
                 ->withErrors($form->getErrors())
                 ->withInput();
-        };
+        }
         $data = $form->getFieldValues();
         $user->update($data);
 
@@ -124,6 +126,9 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+        session()->flash('message','Booster excluido com sucesso');
         return redirect()->route('admin.users.index');
     }
+
+
 }
