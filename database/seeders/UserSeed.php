@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,7 @@ class UserSeed extends Seeder
      */
     public function run()
     {
+
         User::factory([
             'email'=> 'biladanoar@gmail.com'
         ])->create()->each(function (User $user){
@@ -21,13 +23,14 @@ class UserSeed extends Seeder
             $user->save();
         });
         User::factory(10)->create()->each(function (User $user){
-            User::assingRole($user, User::ROLE_BOOSTER);
+            User::assingRole($user, User::ROLE_USER);
             $user->save();
         });
 
         User::factory(10)->create()->each(function (User $user){
-            User::assingRole($user, User::ROLE_USER);
+            User::assingRole($user, User::ROLE_BOOSTER);
             $user->save();
         });
+
     }
 }

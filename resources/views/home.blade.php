@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        {!!Button::primary('elojobs')->asLinkTo(route('admin.booster.index')) !!}
+                        {!!Button::primary('elojobs')->asLinkTo(route('booster.customers.index')) !!}
                     {{ __('You are logged in!') }}
                 </div>
             </div>

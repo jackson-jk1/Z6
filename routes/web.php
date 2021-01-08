@@ -27,15 +27,18 @@ Route::prefix('admin')->group(function(){
     ], function (){
         Route::resource('users','\App\Http\Controllers\Admin\UserController');
 
-    });
-    Route::group([
-        'name'=> 'Booster\\',
-        'as' => 'admin.',
-        'middleware' => ['auth','can:booster']
-    ], function (){
-        Route::resource('booster','\App\Http\Controllers\Admin\BoosterController');
 
     });
+    Route::group([
+        'name'=> 'Customer\\',
+        'as' => 'booster.',
+        'middleware' => ['auth','can:booster']
+    ], function (){
+  Route::resource('customers', '\App\Http\Controllers\Admin\CustomersController');
+        Route::put('/users/update/{customer}/{id}', '\App\Http\Controllers\Admin\CustomersController@update')->name('customers.update');
+
+    });
+
 });
 
 

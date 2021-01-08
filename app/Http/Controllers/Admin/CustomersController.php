@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booster;
-use App\Models\User;
-use App\Models\UserLOL;
+use App\Models\Customers;
+use App\Models\CustomerJobs;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
-class BoosterController extends Controller
+class CustomersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +18,8 @@ class BoosterController extends Controller
      */
     public function index()
     {
-        $users= User::where('userble_type','App\Models\UserLol')->get();
+        $users = CustomerJobs::where('status','RE')->get();
+
         return view('admin.users.clients',compact('users'));
     }
 
@@ -45,10 +47,10 @@ class BoosterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Booster  $booster
+     * @param  \App\Models\Customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function show(Booster $booster)
+    public function show(Customers $customers)
     {
         //
     }
@@ -56,10 +58,10 @@ class BoosterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Booster  $booster
+     * @param  \App\Models\Customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Booster $booster)
+    public function edit(Customers $customers)
     {
         //
     }
@@ -67,23 +69,28 @@ class BoosterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Booster  $booster
+     * @param  \App\Models\CustomerJobs  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booster $booster)
+    public function update(CustomerJobs $customer,$id)
     {
-        //
+
+        $customer->id_booster = $id;
+        $customer->update();
+        $users = CustomerJobs::where('id_booster',$customer->id_booster)->get();
+        return view('booster.accept',compact('users'));
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Booster  $booster
+     * @param  \App\Models\CustomerJobs  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booster $booster)
+    public function destroy(CustomerJobs $customer)
     {
-        //
+        $customer->delete();
+        return redirect()->route('booster.customers.index');
     }
 }

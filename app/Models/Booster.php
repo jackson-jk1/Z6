@@ -10,7 +10,6 @@ class Booster extends Model
     use HasFactory;
 
 
-
     public function user(){
         return $this-> morphOne(User::class ,'userable');
     }
