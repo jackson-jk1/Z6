@@ -162,12 +162,15 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
-        Bootstrapper\BootstrapperL5ServiceProvider::class,
+
 
         /*
          * Package Service Providers...
+         *
          */
+        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+        Bootstrapper\BootstrapperL5ServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
         /*
          * Application Service Providers...

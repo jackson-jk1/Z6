@@ -19,9 +19,154 @@ class ProductSeed extends Seeder
     {
         DB::table('products')->insert([
             'name' => 'SELOIRO',
-            'rank' => Products::VALUES_JOB['Prata'],
-            'division' =>  'V',
-            'value' => 5
+            'rank' => Products::ELOS[1],
+            'division' => Products::DIVISION[1] ,
+            'value' => Products::VALUES_JOB['Ferro']
         ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[1],
+            'division' => Products::DIVISION[2] ,
+            'value' => Products::VALUES_JOB['Ferro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[1],
+            'division' => Products::DIVISION[3] ,
+            'value' => Products::VALUES_JOB['Ferro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[1],
+            'division' => Products::DIVISION[4] ,
+            'value' => Products::VALUES_JOB['Ferro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[1],
+            'division' => Products::DIVISION[5] ,
+            'value' => Products::VALUES_JOB['Ferro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[2],
+            'division' => Products::DIVISION[1] ,
+            'value' => Products::VALUES_JOB['Prata']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[2],
+            'division' => Products::DIVISION[2] ,
+            'value' => Products::VALUES_JOB['Prata']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[2],
+            'division' => Products::DIVISION[3] ,
+            'value' => Products::VALUES_JOB['Prata']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[2],
+            'division' => Products::DIVISION[4] ,
+            'value' => Products::VALUES_JOB['Prata']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[2],
+            'division' => Products::DIVISION[5] ,
+            'value' => Products::VALUES_JOB['Prata']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[3],
+            'division' => Products::DIVISION[1] ,
+            'value' => Products::VALUES_JOB['Ouro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[3],
+            'division' => Products::DIVISION[2] ,
+            'value' => Products::VALUES_JOB['Ouro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[3],
+            'division' => Products::DIVISION[3] ,
+            'value' => Products::VALUES_JOB['Ouro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[3],
+            'division' => Products::DIVISION[4] ,
+            'value' => Products::VALUES_JOB['Ouro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[3],
+            'division' => Products::DIVISION[5] ,
+            'value' => Products::VALUES_JOB['Ouro']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[4],
+            'division' => Products::DIVISION[1] ,
+            'value' => Products::VALUES_JOB['Platina']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[4],
+            'division' => Products::DIVISION[2] ,
+            'value' => Products::VALUES_JOB['Platina']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[4],
+            'division' => Products::DIVISION[3] ,
+            'value' => Products::VALUES_JOB['Platina']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[4],
+            'division' => Products::DIVISION[4] ,
+            'value' => Products::VALUES_JOB['Platina']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[4],
+            'division' => Products::DIVISION[5] ,
+            'value' => Products::VALUES_JOB['Platina']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[5],
+            'division' => Products::DIVISION[1] ,
+            'value' => Products::VALUES_JOB['Diamante']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[5],
+            'division' => Products::DIVISION[2] ,
+            'value' => Products::VALUES_JOB['Diamante']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[5],
+            'division' => Products::DIVISION[3] ,
+            'value' => Products::VALUES_JOB['Diamante']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[5],
+            'division' => Products::DIVISION[4] ,
+            'value' => Products::VALUES_JOB['Diamante']
+        ]);
+        DB::table('products')->insert([
+            'name' => 'SELOIRO',
+            'rank' => Products::ELOS[5],
+            'division' => Products::DIVISION[5] ,
+            'value' => Products::VALUES_JOB['Diamante']
+        ]);
+
     }
 }

@@ -17,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::group([
+  'as' => 'api',
+    ], function (){
+    Route::post('/access_token', 'App\Http\Controllers\API\AuthController@accessToken');
+    Route::group(['middleware' => 'auth:api'],function (){
+        Route::get('/user', function (Request $request) {
+            return $request->user();
+        });
+        Route::post('/logout', 'App\Http\Controllers\API\AuthController@logout');
+    });
+
+}
+);
