@@ -12,31 +12,34 @@ class Products extends Model
 
     const VALUES_JOB = [
         'Ferro' => 3,
-        'Prata' => 5,
+        'Bronze' => 5,
+        'Prata' => 10,
         'Ouro' =>15,
         'Platina' =>20,
         'Diamante'=>30,
     ];
     const ELOS = [
        1 => 'Ferro',
-       2 => 'Prata',
-       3=> 'Ouro',
-       4=> 'Platina',
-       5=> 'Diamante',
+        2 => 'Bronze',
+       3 => 'Prata',
+       4=> 'Ouro',
+       5=> 'Platina',
+       6=> 'Diamante',
     ];
 
     const DIVISION = [
-        1 => 'V',
-        2 => 'IV',
-        3=> 'III',
-        4=> 'II',
-        5=> 'I',
+
+        1 => 'IV',
+        2=> 'III',
+        3=> 'II',
+        4=> 'I',
     ];
     protected $fillable = [
 
         'value',
         'rank',
         'division',
-        'name'
+        'name',
+        'path'
     ];
 }

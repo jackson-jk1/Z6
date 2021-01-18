@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('name');
             $table->string('rank');
             $table->enum('division',['V','IV','III','II','I'])->default('V');
             $table->decimal('value',6,2)->default(0);

@@ -41,6 +41,8 @@ Route::prefix('admin')->group(function(){
 
 });
 
+Route::resource('/home', '\App\Http\Controllers\HomeController',['only'=>['index']]);
+Route::get('/home/sum', '\App\Http\Controllers\HomeController@sum')->name('sum');
 
-Route::get('/home', '\App\Http\Controllers\HomeController@index')->name('home');
+
 

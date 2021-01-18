@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CustomersJobs extends Controller
+class CustomersJobsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CustomersJobs extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
