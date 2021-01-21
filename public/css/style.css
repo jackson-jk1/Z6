@@ -1,0 +1,85 @@
+body{
+   background: rgb(0, 6, 0);
+}
+#z6{
+    background-image:url("../imagens/z6.png");
+    background-repeat: no-repeat;
+    background-size: 100% 70%;
+    height: 480px;
+}
+.list-cab li{
+    display: inline;
+    padding-right: 20px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+.list-cab li a p{
+    display: inline;
+}
+
+.list-cab li a{
+    color: #ffffff;
+}
+.list-cab li a:hover{
+    text-decoration: none;
+    color:rgb(9, 230, 250);
+}
+.list{
+   margin-top: 10px;
+    font-size: 1.1em;
+
+}
+
+.list li {
+   padding: 10px;
+}
+
+.list li a{
+    color: #ffffff;
+    font-style:initial;
+    font-weight: bold;
+
+}
+
+.list li a{
+
+    text-decoration: none;
+
+}
+.list li a:hover{
+
+    text-decoration: none;
+    color:rgb(9, 230, 250);
+}
+
+#frases{
+    margin-top: 190px;
+    font-size: 3em;
+    color: #ffffff;
+    font-weight: bold;
+    border-top:2px solid rgb(3, 40, 36);
+    border-bottom:2px solid rgb(3, 40, 36);
+    letter-spacing: 8px;
+    text-align: center;
+
+
+}
+
+@media only screen and (max-width : 800px) {
+    #frases{
+        margin-top: 190px;
+        font-size: 2em;
+        text-align: center;
+
+    }
+    .list-cab li a{
+        padding-right: 5px;
+
+    }
+    .list-cab li a p{
+        display:none;
+    }
+
+}

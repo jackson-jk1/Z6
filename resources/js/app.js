@@ -20,6 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('dashboard-component', require('./components/dashboard.vue').default);
 Vue.component('product-component',require('./components/frontend/products.vue').default);
 
 /**
